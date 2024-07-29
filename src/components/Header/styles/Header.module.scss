@@ -1,0 +1,12 @@
+@import "../../../styles/variables.scss";
+
+.header {
+  background-color: $desaturated-dark-cyan;
+  color: $white;
+  padding: 30px;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+  }
+}

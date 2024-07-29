@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
 
 $family: "League Spartan", sans-serif;
@@ -18,3 +14,4 @@ $light-grayish-cyan: hsl(180, 52%, 96%); //Background
 $grayish-cyan: hsl(180, 31%, 95%); //Filter
 $dark-grayish-cyan: hsl(180, 8%, 52%);
 $very-dark-grayish-cyan: hsl(180, 14%, 20%);
+$white: #fff;
