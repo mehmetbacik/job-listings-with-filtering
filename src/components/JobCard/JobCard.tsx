@@ -1,12 +1,15 @@
-import Image from 'next/image';
+import Image from "next/image";
 import { Job } from "../../types/job";
 import styles from "./styles/JobCard.module.scss";
 
 interface JobCardProps {
   job: Job;
+  onTagClick: (tag: string) => void;
 }
 
-const JobCard: React.FC<JobCardProps> = ({ job }) => {
+const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
+  const tags = [job.role, job.level, ...job.languages, ...job.tools];
+
   return (
     <div className={`${styles.jobCard} ${job.featured ? styles.featured : ""}`}>
       <Image
@@ -29,10 +32,14 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
           <span>{job.location}</span>
         </div>
         <div className={styles.tags}>
-          {[...job.languages, ...job.tools].map((tag) => (
-            <span key={tag} className={styles.tag}>
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              className={styles.tag}
+              onClick={() => onTagClick(tag)}
+            >
               {tag}
-            </span>
+            </button>
           ))}
         </div>
       </div>

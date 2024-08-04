@@ -1,28 +1,45 @@
+import { useEffect } from "react";
 import styles from "./styles/FilterPanel.module.scss";
 
 interface FilterPanelProps {
   filters: string[];
-  setFilters: (filters: string[]) => void;
+  onFilterChange: (filters: string[]) => void;
 }
 
-const FilterPanel = ({ filters, setFilters }: FilterPanelProps) => {
-  const removeFilter = (filter: string) => {
-    setFilters(filters.filter((f) => f !== filter));
+const FilterPanel: React.FC<FilterPanelProps> = ({
+  filters,
+  onFilterChange,
+}) => {
+  const handleRemoveFilter = (filter: string) => {
+    onFilterChange(filters.filter((f) => f !== filter));
   };
+
+  const handleClearFilters = () => {
+    onFilterChange([]);
+  };
+
+  useEffect(() => {
+    console.log(filters);
+  }, [filters]);
 
   return (
     <div className={styles.filterPanel}>
       {filters.map((filter) => (
-        <span key={filter} className={styles.filterTag}>
+        <div className={styles.filterTag} key={filter}>
           {filter}
           <button
-            onClick={() => removeFilter(filter)}
+            onClick={() => handleRemoveFilter(filter)}
             className={styles.removeButton}
           >
             x
           </button>
-        </span>
+        </div>
       ))}
+      {filters.length > 0 && (
+        <button onClick={handleClearFilters} className={styles.clearButton}>
+          Clear
+        </button>
+      )}
     </div>
   );
 };
