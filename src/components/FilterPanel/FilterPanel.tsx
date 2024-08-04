@@ -18,10 +18,6 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
     onFilterChange([]);
   };
 
-  useEffect(() => {
-    console.log(filters);
-  }, [filters]);
-
   return (
     <div className={styles.filterPanel}>
       {filters.map((filter) => (

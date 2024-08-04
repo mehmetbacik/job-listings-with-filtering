@@ -10,23 +10,31 @@ import { Job } from "@/types/job";
 const Home = () => {
   const [filters, setFilters] = useState<string[]>([]);
 
-  const handleFilter = (filter: string) => {
-    if (!filters.includes(filter)) {
-      setFilters([...filters, filter]);
+  const handleFilterChange = (newFilters: string[]) => {
+    setFilters(newFilters);
+  };
+
+  const handleTagClick = (tag: string) => {
+    if (!filters.includes(tag)) {
+      setFilters([...filters, tag]);
     }
   };
 
-  const filteredJobs = filters.length === 0 ? jobsData : jobsData.filter((job) =>
-    filters.every((filter) => job.languages.includes(filter) || job.tools.includes(filter))
-  );
+  const filteredJobs =
+    filters.length === 0
+      ? jobsData
+      : jobsData.filter((job) => {
+          const tags = [job.role, job.level, ...job.languages, ...job.tools];
+          return filters.every((filter) => tags.includes(filter));
+        });
 
   return (
     <div>
       <Header />
-      <FilterPanel filters={filters} setFilters={setFilters} />
+      <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
       <div>
         {filteredJobs.map((job: Job) => (
-          <JobCard key={job.id} job={job} />
+          <JobCard key={job.id} job={job} onTagClick={handleTagClick} />
         ))}
       </div>
     </div>
