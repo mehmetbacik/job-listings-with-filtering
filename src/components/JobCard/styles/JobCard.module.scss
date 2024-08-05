@@ -1,0 +1,65 @@
+@import "../../../styles/variables.scss";
+
+.jobCard {
+  background: $white;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  &.featured {
+    border-left: 5px solid $desaturated-dark-cyan;
+  }
+  .logo {
+    margin-right: 20px;
+  }
+  .jobDetails {
+    flex: 1;
+    .jobHeader {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .company {
+        font-weight: bold;
+      }
+      .new {
+        background-color: $desaturated-dark-cyan;
+        color: $white;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+      .featured {
+        background-color: $very-dark-grayish-cyan;
+        color: $white;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+    }
+    .position {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+    .jobInfo {
+      display: flex;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: $very-dark-grayish-cyan;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      .tag {
+        background-color: $grayish-cyan;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+}

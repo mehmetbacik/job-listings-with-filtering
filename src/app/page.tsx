@@ -29,15 +29,15 @@ const Home = () => {
         });
 
   return (
-    <div>
+    <>
       <Header />
-      <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
-      <div>
+      <main className="container mx-auto px-4">
+        <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
         {filteredJobs.map((job: Job) => (
           <JobCard key={job.id} job={job} onTagClick={handleTagClick} />
         ))}
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 

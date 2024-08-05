@@ -2,11 +2,8 @@
 
 .header {
   background-color: $desaturated-dark-cyan;
-  color: $white;
-  padding: 30px;
-  text-align: center;
-
-  h1 {
-    margin: 0;
-  }
+  background-image: url(/assets/images/bg-header-desktop.svg);
+  background-position: center;
+  background-size: cover;
+  padding: 100px;
 }
