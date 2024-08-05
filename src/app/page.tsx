@@ -10,6 +10,12 @@ import { Job } from "@/types/job";
 const Home = () => {
   const [filters, setFilters] = useState<string[]>([]);
 
+  const handleFilter = (filter: string) => {
+    if (!filters.includes(filter)) {
+      setFilters([...filters, filter]);
+    }
+  };
+
   const handleFilterChange = (newFilters: string[]) => {
     setFilters(newFilters);
   };
@@ -32,7 +38,9 @@ const Home = () => {
     <>
       <Header />
       <main className="container mx-auto px-4">
-        <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
+        {filters.length > 0 && (
+          <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
+        )}
         {filteredJobs.map((job: Job) => (
           <JobCard key={job.id} job={job} onTagClick={handleTagClick} />
         ))}

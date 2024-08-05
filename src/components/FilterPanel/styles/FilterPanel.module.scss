@@ -1,0 +1,38 @@
+@import "../../../styles/variables.scss";
+
+.filterPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0;
+  .filters {
+    display: flex;
+    gap: 10px;
+    .filter {
+      display: flex;
+      align-items: center;
+      background-color: $desaturated-dark-cyan;
+      color: $white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      span {
+        margin-right: 5px;
+      }
+      button {
+        background: none;
+        border: none;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+  .clearButton {
+    background: none;
+    border: none;
+    color: $desaturated-dark-cyan;
+    cursor: pointer;
+  }
+}
