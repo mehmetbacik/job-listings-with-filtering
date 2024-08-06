@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Image from "next/image";
 import styles from "./styles/FilterPanel.module.scss";
 
 interface FilterPanelProps {
@@ -20,17 +21,24 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
 
   return (
     <div className={styles.filterPanel}>
-      {filters.map((filter) => (
-        <div className={styles.filterTag} key={filter}>
-          {filter}
-          <button
-            onClick={() => handleRemoveFilter(filter)}
-            className={styles.removeButton}
-          >
-            x
-          </button>
-        </div>
-      ))}
+      <div className={styles.filters}>
+        {filters.map((filter) => (
+          <div className={styles.filterTag} key={filter}>
+            {filter}
+            <button
+              onClick={() => handleRemoveFilter(filter)}
+              className={styles.removeButton}
+            >
+              <Image
+                src="assets/images/icon-remove.svg"
+                alt="Remove filter"
+                width={16}
+                height={16}
+              />
+            </button>
+          </div>
+        ))}
+      </div>
       {filters.length > 0 && (
         <button onClick={handleClearFilters} className={styles.clearButton}>
           Clear

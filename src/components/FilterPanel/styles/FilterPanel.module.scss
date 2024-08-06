@@ -5,34 +5,42 @@
   justify-content: space-between;
   align-items: center;
   background-color: $white;
-  padding: 10px;
+  padding: 20px 40px;
   border-radius: 5px;
-  margin: 20px 0;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -5px;
+  transform: translateY(-35px);
   .filters {
     display: flex;
-    gap: 10px;
-    .filter {
+    align-items: center;
+    gap: 15px;
+    .filterTag {
+      background-color: $grayish-cyan;
       display: flex;
       align-items: center;
-      background-color: $desaturated-dark-cyan;
-      color: $white;
-      padding: 5px 10px;
+      justify-content: space-between;
+      gap: 10px;
+      padding-left: 10px;
       border-radius: 5px;
-      span {
-        margin-right: 5px;
-      }
-      button {
-        background: none;
-        border: none;
-        color: $white;
-        cursor: pointer;
+      font-size: 1rem;
+      color: $desaturated-dark-cyan;
+      font-weight: bold;
+      .removeButton {
+        background-color: $desaturated-dark-cyan;
+        padding: 8px;
+        border-radius: 0px 5px 5px 0px;
+        &:hover {
+          background-color: $very-dark-grayish-cyan;
+        }
       }
     }
   }
   .clearButton {
-    background: none;
-    border: none;
-    color: $desaturated-dark-cyan;
-    cursor: pointer;
+    font-size: 1rem;
+    color: $very-dark-grayish-cyan;
+    font-weight: bold;
+    &:hover {
+      color: $desaturated-dark-cyan;
+      text-decoration: underline;
+    }
   }
 }
