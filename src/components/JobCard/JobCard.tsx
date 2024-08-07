@@ -20,27 +20,31 @@ const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
         className={styles.logo}
       />
       <div className={styles.jobDetails}>
-        <div className={styles.jobHeader}>
-          <span className={styles.company}>{job.company}</span>
-          {job.new && <span className={styles.new}>NEW!</span>}
-          {job.featured && <span className={styles.featured}>FEATURED</span>}
+        <div className={styles.jobDetailsContent}>
+          <div className={styles.jobHeader}>
+            <span className={styles.company}>{job.company}</span>
+            {job.new && <span className={styles.new}>NEW!</span>}
+            {job.featured && <span className={styles.featured}>FEATURED</span>}
+          </div>
+          <div className={styles.position}>{job.position}</div>
+          <div className={styles.jobInfo}>
+            <span>{job.postedAt}</span>
+            <span>{job.contract}</span>
+            <span>{job.location}</span>
+          </div>
         </div>
-        <div className={styles.position}>{job.position}</div>
-        <div className={styles.jobInfo}>
-          <span>{job.postedAt}</span>
-          <span>{job.contract}</span>
-          <span>{job.location}</span>
-        </div>
-        <div className={styles.tags}>
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              className={styles.tag}
-              onClick={() => onTagClick(tag)}
-            >
-              {tag}
-            </button>
-          ))}
+        <div className={styles.jobDetailsTag}>
+          <div className={styles.tags}>
+            {tags.map((tag) => (
+              <button
+                key={tag}
+                className={styles.tag}
+                onClick={() => onTagClick(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
