@@ -38,9 +38,14 @@ const Home = () => {
     <>
       <Header />
       <main className="container mx-auto px-4">
-        {filters.length > 0 && (
-          <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
-        )}
+        <div className="relative mb-[70px]">
+          {filters.length > 0 && (
+            <FilterPanel
+              filters={filters}
+              onFilterChange={handleFilterChange}
+            />
+          )}
+        </div>
         {filteredJobs.map((job: Job) => (
           <JobCard key={job.id} job={job} onTagClick={handleTagClick} />
         ))}
