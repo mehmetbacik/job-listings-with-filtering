@@ -3,16 +3,14 @@
 .jobCard {
   background: $white;
   border-radius: 5px;
-  padding: 20px;
+  padding: 40px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -5px;
   &.featured {
     border-left: 5px solid $desaturated-dark-cyan;
-  }
-  .logo {
-    margin-right: 20px;
   }
   .jobDetails {
     display: flex;
@@ -20,12 +18,18 @@
     justify-content: space-between;
     flex: 1;
     .jobDetailsContent {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
       .jobHeader {
         display: flex;
         align-items: center;
         gap: 10px;
         .company {
+          color: $desaturated-dark-cyan;
           font-weight: bold;
+          margin-right: 5px;
+          font-size: 1.1rem;
         }
         .new {
           background-color: $desaturated-dark-cyan;
@@ -33,6 +37,7 @@
           padding: 5px;
           border-radius: 15px;
           font-size: 0.8rem;
+          font-weight: 500;
         }
         .featured {
           background-color: $very-dark-grayish-cyan;
@@ -40,17 +45,42 @@
           padding: 5px;
           border-radius: 15px;
           font-size: 0.8rem;
+          font-weight: 500;
         }
       }
       .position {
         font-size: 1.2rem;
-        margin: 10px 0;
+        font-weight: bold;
+        color: $very-dark-grayish-cyan;
+        &:hover {
+          color: $desaturated-dark-cyan;
+          cursor: pointer;
+        }
       }
       .jobInfo {
         display: flex;
-        gap: 10px;
-        font-size: 0.9rem;
-        color: $very-dark-grayish-cyan;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: flex;
+          align-items: center;
+          position: relative;
+          padding-left: 12px;
+          color: $dark-grayish-cyan;
+          font-size: 1rem;
+          &:first-child {
+            padding-left: 0px;
+          }
+          &::before {
+            content: "•";
+            margin-right: 12px;
+            color: $dark-grayish-cyan;
+          }
+          &:first-child::before {
+            display: none;
+          }
+        }
       }
     }
     .jobDetailsTag {

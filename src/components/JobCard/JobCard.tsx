@@ -15,8 +15,8 @@ const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
       <Image
         src={job.logo}
         alt={`${job.company} logo`}
-        width={50}
-        height={50}
+        width={80}
+        height={80}
         className={styles.logo}
       />
       <div className={styles.jobDetails}>
@@ -27,11 +27,11 @@ const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
             {job.featured && <span className={styles.featured}>FEATURED</span>}
           </div>
           <div className={styles.position}>{job.position}</div>
-          <div className={styles.jobInfo}>
-            <span>{job.postedAt}</span>
-            <span>{job.contract}</span>
-            <span>{job.location}</span>
-          </div>
+          <ul className={styles.jobInfo}>
+            <li>{job.postedAt}</li>
+            <li>{job.contract}</li>
+            <li>{job.location}</li>
+          </ul>
         </div>
         <div className={styles.jobDetailsTag}>
           <div className={styles.tags}>

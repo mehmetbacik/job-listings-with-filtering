@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&display=swap');
 
 $family: "League Spartan", sans-serif;
-$size: 15px;
+$size: 1rem;
 
 @mixin font {
   font-family: $family;
