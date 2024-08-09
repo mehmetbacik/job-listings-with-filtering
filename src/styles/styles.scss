@@ -6,6 +6,14 @@
 body {
   @include font;
   background-color: $light-grayish-cyan;
+  .container {
+    .container-filter {
+      margin-bottom: 70px;
+      @media (max-width: 768px) {
+        margin-bottom: 150px;
+      }
+    }
+  }
 }
 
 ::-webkit-scrollbar {

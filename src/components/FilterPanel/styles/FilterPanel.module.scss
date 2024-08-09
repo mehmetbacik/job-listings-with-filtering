@@ -11,10 +11,18 @@
   position: absolute;
   width: 100%;
   top: -105px;
+  @media (max-width: 768px) {
+    top: -180px;
+    padding: 20px;
+  }
   .filters {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
     .filterTag {
       background-color: $grayish-cyan;
       display: flex;
@@ -26,10 +34,19 @@
       font-size: 1rem;
       color: $desaturated-dark-cyan;
       font-weight: bold;
+      @media (max-width: 768px) {
+        font-size: 0.8rem;
+      }
       .removeButton {
         background-color: $desaturated-dark-cyan;
         padding: 8px;
         border-radius: 0px 5px 5px 0px;
+        @media (max-width: 768px) {
+          padding: 7px;
+          img {
+            width: 10px;
+          }
+        }
         &:hover {
           background-color: $very-dark-grayish-cyan;
         }

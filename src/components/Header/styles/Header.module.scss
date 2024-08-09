@@ -6,4 +6,8 @@
   background-position: center;
   background-size: cover;
   padding: 100px;
+  @media (max-width: 768px) {
+    background-image: url(/assets/images/bg-header-mobile.svg);
+    padding: 45px;
+  }
 }

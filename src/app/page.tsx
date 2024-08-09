@@ -6,6 +6,7 @@ import FilterPanel from "@/components/FilterPanel/FilterPanel";
 import JobCard from "@/components/JobCard/JobCard";
 import jobsData from "@/data/jobs";
 import { Job } from "@/types/job";
+import "../styles/styles.scss";
 
 const Home = () => {
   const [filters, setFilters] = useState<string[]>([]);
@@ -38,7 +39,7 @@ const Home = () => {
     <>
       <Header />
       <main className="container mx-auto px-4">
-        <div className="relative mb-[70px]">
+        <div className={`relative mb-[70px] ${filters.length > 0 ? "container-filter" : "mb-[70px]"}`}>
           {filters.length > 0 && (
             <FilterPanel
               filters={filters}
