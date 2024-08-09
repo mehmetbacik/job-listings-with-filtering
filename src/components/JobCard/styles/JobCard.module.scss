@@ -28,12 +28,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
     flex: 1;
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: flex-start;
       margin-top: 20px;
       width: 100%;
+      gap: 0px;
     }
     .jobDetailsContent {
       display: flex;

@@ -15,6 +15,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, onTagClick }) => {
       <Image
         src={job.logo}
         alt={`${job.company} logo`}
+        priority
         width={80}
         height={80}
         className={styles.logo}
