@@ -56,7 +56,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Deploy
 
-For a detailed exploration of the project, you can visit the [deployed site here](#).
+For a detailed exploration of the project, you can visit the [deployed site here](https://listings-with-filtering.vercel.app/).
 
 ## GitHub Page
 
