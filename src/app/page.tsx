@@ -6,7 +6,10 @@ import FilterPanel from "@/components/FilterPanel/FilterPanel";
 import JobCard from "@/components/JobCard/JobCard";
 import jobsData from "@/data/jobs";
 import { Job } from "@/types/job";
+import { League_Spartan } from 'next/font/google'
 import "../styles/styles.scss";
+
+const spartan = League_Spartan({ subsets: ['latin'] })
 
 const Home = () => {
   const [filters, setFilters] = useState<string[]>([]);
@@ -36,7 +39,7 @@ const Home = () => {
         });
 
   return (
-    <>
+    <div className={spartan.className}>
       <Header />
       <main className="container mx-auto px-4">
         <div className={`relative mb-[70px] ${filters.length > 0 ? "container-filter" : "mb-[70px]"}`}>
@@ -51,7 +54,7 @@ const Home = () => {
           <JobCard key={job.id} job={job} onTagClick={handleTagClick} />
         ))}
       </main>
-    </>
+    </div>
   );
 };
 
